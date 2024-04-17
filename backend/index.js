@@ -1,17 +1,16 @@
 const express = require("express");
+const cors=require("cors");
+
+app.use(cors());
+app.use(express.json());
+
 const mainRouter=require("./routes/index");
 
 const app=express();
-const PORT=3000;
 
 app.use("/api/v1",mainRouter);
-app.use(mainRouter);
-
-app.listen(PORT,function(err){
-    if(err) console.log(err);
-    console.log("server is running on port",PORT);
-})
-
+// app.use(mainRouter);
+app.listen(3000);
 
 
 
